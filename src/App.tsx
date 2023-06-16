@@ -1,13 +1,15 @@
-import { useState } from 'react'
-import './App.css'
-import { BooksTable } from './components/BooksTable'
+// import { useState } from 'react'
+// import BooksList from './components/BooksList'
+// import Navbar from './components/Navbar/Navbar'
+// import TailwindTable from './components/TailwindTable/TailwindTable'
+import {
+  RouterProvider
+} from "react-router-dom";
+import { router } from './App.routes';
 
 function App() {
-
   return (
-    <>
-      <BooksTable />
-    </>
+    <RouterProvider router={router} />
   )
 }
 

@@ -1,24 +1,14 @@
-export interface RawBookData {
-  id: string;
-  etag: string;
-  volumeInfo: {
-    authors: string[];
-    categories: string[];
-    publisher: string;
-    maturityRating: string;
-    pageCount: number;
-    publishedDate: string;
-    title: string;
-  };
-}
-
-export interface BookData {
+export type BookData = {
   id: string;
   title: string;
-  authors: string;
+  authors: string[];
   publisher: string;
   publishedDate: string;
-  category: string;
+  categories: string[];
   maturityRating: string;
-  pageCount: number;
-}
+  pageCount: number | string;
+  imageLinks: {
+    smallThumbnail: string;
+    thumbnail: string;
+  };
+};

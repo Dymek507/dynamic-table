@@ -7,7 +7,8 @@ type TableRowProps = {
 }
 
 const TableRow = ({ bookData }: TableRowProps) => {
-  const { id, title, authors, publisher, publishedDate, pageCount, categories, imageLinks } = bookDatas
+  const { id, title, authors, publisher, publishedDate, pageCount, categories, imageLinks } = bookData
+
   return (
     <tr>
       <th>
@@ -19,19 +20,19 @@ const TableRow = ({ bookData }: TableRowProps) => {
         <div className="flex items-center space-x-3">
           <div className="avatar">
             <div className="mask mask-squircle w-12 h-12">
-              <img src="/tailwind-css-component-profile-3@56w.png" alt="Avatar Tailwind CSS Component" />
+              <img src={imageLinks.smallThumbnail} alt={title} />
             </div>
           </div>
           <div>
-            <div className="font-bold">Brice Swyre</div>
-            <div className="text-sm opacity-50">China</div>
+            <div className="font-bold">{title}</div>
+            <div className="text-sm opacity-50">{authors}</div>
           </div>
         </div>
       </td>
       <td>
         Carroll Group
         <br />
-        <span className="badge badge-ghost badge-sm">Tax Accountant</span>
+        <span className="badge badge-ghost badge-sm">{categories}</span>
       </td>
       <td>Red</td>
       <th>
@@ -64,7 +65,7 @@ const TailwindTable = ({ searchTerm }: TailwindTableProps) => {
   console.log('booksData', booksData)
   return (
     // <div className="overflow-x-auto">
-    <table className="table w-full">
+    <table className="table w-full bg-slate-200">
       {/* head */}
       <thead>
         <tr>
@@ -92,7 +93,6 @@ const TailwindTable = ({ searchTerm }: TailwindTableProps) => {
           <th></th>
         </tr>
       </tfoot>
-
     </table>
     // </div>
   )
