@@ -1,5 +1,6 @@
 export type BookData = {
   id: string;
+  etag: string;
   title: string;
   authors: string[];
   publisher: string;

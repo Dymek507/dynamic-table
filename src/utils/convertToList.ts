@@ -3,7 +3,8 @@ import { BookData } from "../types/global";
 export const convertToList = (data: any[]): BookData[] => {
   const listData = data.map((book: any) => {
     return {
-      id: book.etag,
+      id: book.id,
+      etag: book.etag,
       title: book.volumeInfo.title,
       authors: book.volumeInfo?.authors || [],
       publisher: book.volumeInfo.publisher,

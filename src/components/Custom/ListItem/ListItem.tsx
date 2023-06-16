@@ -3,6 +3,7 @@ import { BookData } from '../../../types/global'
 import AuthorsDisplay from './AuthorsDisplay'
 import CategoriesDisplay from './CategoriesDisplay'
 import DefaultImage from './DefaultImage'
+import { Link } from 'react-router-dom'
 
 type ListItemProps = {
   bookData: BookData,
@@ -33,7 +34,9 @@ const ListItem = ({ bookData, handleSelect, selectedBooksIds }: ListItemProps) =
       </div >
       {/* Details Buttons */}
       < div className='flex-col w-40 gap-2 m-2 flex-center justify-self-end' >
-        <button>More</button>
+        <Link to={`/catalog/${id}`}>
+          <button>Details</button>
+        </Link>
       </div >
     </div >
   )
