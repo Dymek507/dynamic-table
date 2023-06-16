@@ -1,7 +1,7 @@
 import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
 import { useEffect, useState } from 'react';
 import { BookData } from '../../types/global';
-import { useFetchData } from '../../hooks/useFetchData';
+import { useFetchData } from '../../hooks/useFetchList';
 import { columns } from '../BooksTable/columns';
 
 

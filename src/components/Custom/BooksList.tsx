@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import ListItem from './ListItem/ListItem'
 import { BookData } from '../../types/global'
-import { useFetchData } from '../../hooks/useFetchData'
+import { useFetchData } from '../../hooks/useFetchList'
 
 type BooksListProps = {
   searchTerm: string

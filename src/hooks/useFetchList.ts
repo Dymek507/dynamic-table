@@ -1,5 +1,5 @@
 import useSWR from "swr";
-import { convertToList } from "../utils/convertToList";
+import { convertToBookData } from "../utils/convertToBookData";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 const BOOKS_API_KEY = import.meta.env.VITE_GOOGLE_BOOKS_API_KEY;
@@ -15,6 +15,9 @@ export const useFetchData = (searchText: string) => {
   if (error) throw error;
   // if (isLoading) console.log(isLoading);
   if (searchText && data && data.items) {
-    return convertToList(data.items);
+    const convertedData = data.items.map((book: any) => {
+      return convertToBookData(book);
+    });
+    return convertedData;
   }
 };

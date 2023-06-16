@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { BookData } from '../../types/global'
-import { useFetchData } from '../../hooks/useFetchData'
+import { useFetchData } from '../../hooks/useFetchList'
 
 type TableRowProps = {
   bookData: BookData

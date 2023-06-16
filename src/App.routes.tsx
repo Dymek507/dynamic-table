@@ -2,9 +2,9 @@ import {
   createBrowserRouter
 } from "react-router-dom";
 import RootLayout from "./layout/RootLayout";
-import TablePage from "./pages/TablePage";
+import Categories from "./pages/Categories";
 import ErrorPage from "./layout/ErrorPage";
-import BookPage from "./pages/BookPage";
+import Book from "./pages/Book";
 
 export const router = createBrowserRouter([
   {
@@ -14,11 +14,11 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/catalog",
-        element: <TablePage />,
+        element: <Categories />,
       },
       {
         path: "/catalog/:bookId",
-        element: <BookPage />
+        element: <Book />
       },
     ]
   },

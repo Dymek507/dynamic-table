@@ -9,6 +9,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import { Search } from './styles/Search';
 import { SearchIconWrapper } from './styles/SearchIconWrapper';
 import { StyledInputBase } from './styles/StyledInputBase';
+import { Link } from 'react-router-dom';
 
 type NavbarProps = {
   setSearchTerm: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
@@ -19,15 +20,17 @@ const Navbar = ({ setSearchTerm }: NavbarProps) => {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
+          <Link to="/catalog">
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="open drawer"
+              sx={{ mr: 2 }}
+            >
+              <MenuIcon />
+            </IconButton>
+          </Link>
           <Typography
             variant="h6"
             noWrap

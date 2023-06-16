@@ -1,20 +1,18 @@
 import useSWR from "swr";
-import { convertToBookData } from "../utils/convertToBookData";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 const BOOKS_API_KEY = import.meta.env.VITE_GOOGLE_BOOKS_API_KEY;
 
-export const useFetchBook = (bookId: string | undefined) => {
+export const useSwrFetcher = (endpoint: string, fetch: boolean) => {
   const { data, error, isLoading } = useSWR(
-    bookId
-      ? `https://www.googleapis.com/books/v1/volumes/${bookId}?key=${BOOKS_API_KEY}`
+    fetch
+      ? `https://www.googleapis.com/books/v1/volumes?${endpoint}&key=${BOOKS_API_KEY}`
       : null,
     fetcher
   );
 
   if (error) throw error;
-  // if (isLoading) console.log(isLoading);
   if (data && !isLoading) {
-    return convertToBookData(data);
+    return data;
   }
 };

@@ -11,7 +11,7 @@ const RootLayout = () => {
     setSearchTerm(e.target.value)
   }
   return (
-    <div className='m-8'>
+    <div className='h-screen p-8'>
       <Navbar setSearchTerm={inputHandler} />
       <Outlet context={{ searchTerm }} />
     </div>
