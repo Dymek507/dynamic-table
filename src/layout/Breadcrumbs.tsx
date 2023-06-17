@@ -1,14 +1,40 @@
+import * as React from 'react';
+import Breadcrumbs from '@mui/material/Breadcrumbs';
+import Link from '@mui/material/Link';
+import { NavLink, useLocation } from 'react-router-dom';
 
-const Breadcrumbs = () => {
-  return (
-    <div className="text-sm breadcrumbs">
-      <ul className="flex flex-row gap-4">
-        <li><a>Home</a></li>
-        <li><a>Documents</a></li>
-        <li>Add Document</li>
-      </ul>
-    </div>
-  )
+function handleClick(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
+  event.preventDefault();
+  console.info('You clicked a breadcrumb.');
 }
 
-export default Breadcrumbs
+const BreadcrumbsBar = () => {
+
+  const loaction = useLocation()
+  console.log(loaction.pathname)
+  let currentLink
+  return (
+    <div role="presentation" onClick={handleClick}>
+      <Breadcrumbs aria-label="breadcrumb">
+        <NavLink to="/" className={({ isActive }) =>
+          isActive ? "underline text-black" : ""
+        }>
+          Home
+        </NavLink>
+        <NavLink to="/catalog" className={({ isActive }) =>
+          isActive ? "underline text-black" : ""
+        }>
+          Catalog
+        </NavLink>
+        <NavLink to="/catalog/" className={({ isActive }) =>
+          isActive ? "underline text-black" : ""
+        }>
+          Book
+        </NavLink>
+
+      </Breadcrumbs>
+    </div>
+  );
+}
+
+export default BreadcrumbsBar
