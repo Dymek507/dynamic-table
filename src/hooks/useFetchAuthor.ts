@@ -1,9 +1,5 @@
-import useSWR from "swr";
 import { convertToBookData } from "../utils/convertToBookData";
 import { useSwrFetcher } from "./useSwrFetcher";
-
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
-const BOOKS_API_KEY = import.meta.env.VITE_GOOGLE_BOOKS_API_KEY;
 
 const getAuthorQuery = (author: string | null) => {
   const authorSplit = author?.split(" ");

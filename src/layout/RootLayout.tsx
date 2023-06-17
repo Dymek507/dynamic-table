@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Navbar from './Navbar/Navbar';
-import { BookData } from '../types/global';
 import { Outlet, useOutletContext } from "react-router-dom";
+import Breadcrumbs from './Breadcrumbs';
 
 type ContextType = { searchTerm: string };
 
@@ -13,6 +13,7 @@ const RootLayout = () => {
   return (
     <div className='h-screen p-8'>
       <Navbar setSearchTerm={inputHandler} />
+      <Breadcrumbs />
       <Outlet context={{ searchTerm }} />
     </div>
   )

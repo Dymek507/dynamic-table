@@ -7,7 +7,7 @@ const BOOKS_API_KEY = import.meta.env.VITE_GOOGLE_BOOKS_API_KEY;
 export const useFetchData = (searchText: string) => {
   const { data, error, isLoading } = useSWR(
     searchText.length > 2
-      ? `https://www.googleapis.com/books/v1/volumes?q=${searchText}&key=${BOOKS_API_KEY}`
+      ? `https://www.googleapis.com/books/v1/volumes?q=${searchText}&maxResults=20&startIndex=20&key=${BOOKS_API_KEY}`
       : null,
     fetcher
   );

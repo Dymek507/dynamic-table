@@ -1,8 +1,7 @@
-import React from 'react'
 import { BookData } from '../../../types/global'
 import AuthorsDisplay from './AuthorsDisplay'
 import CategoriesDisplay from './CategoriesDisplay'
-import DefaultImage from './DefaultImage'
+import DefaultImage from '../../ImageDisplay/DefaultImage'
 import { Link } from 'react-router-dom'
 
 type ListItemProps = {

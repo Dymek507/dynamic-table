@@ -19,8 +19,12 @@ const TableRow = ({ bookData }: TableRowProps) => {
       <td>
         <div className="flex items-center space-x-3">
           <div className="avatar">
-            <div className="mask mask-squircle w-12 h-12">
-              <img src={imageLinks.smallThumbnail} alt={title} />
+            <div className="w-12 h-12 mask mask-squircle">
+              {imageLinks?.smallThumbnail ?
+                <img className='h-full' src={imageLinks.smallThumbnail} alt={title} />
+                :
+                null
+              }
             </div>
           </div>
           <div>
@@ -62,7 +66,8 @@ const TailwindTable = ({ searchTerm }: TailwindTableProps) => {
     }
   }
 
-  console.log('booksData', booksData)
+  console.log(booksData)
+
   return (
     // <div className="overflow-x-auto">
     <table className="table w-full bg-slate-200">
@@ -84,7 +89,7 @@ const TailwindTable = ({ searchTerm }: TailwindTableProps) => {
         {booksData && booksData.map(book => <TableRow key={book.id} bookData={book} />)}
       </tbody>
       {/* foot */}
-      <tfoot>
+      {/* <tfoot>
         <tr>
           <th></th>
           <th>Name</th>
@@ -92,7 +97,7 @@ const TailwindTable = ({ searchTerm }: TailwindTableProps) => {
           <th>Favorite Color</th>
           <th></th>
         </tr>
-      </tfoot>
+      </tfoot> */}
     </table>
     // </div>
   )
