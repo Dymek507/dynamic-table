@@ -3,13 +3,11 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { useSearchTerm } from '../../layout';
 import { Button } from '@mui/material';
-import { Link, useNavigate } from 'react-router-dom';
-import bookImg from '../../assets/book_home.png'
+import bookImg from '../../assets/book_home.webp'
 
 
 const Home = () => {
   const { inputHandler } = useSearchTerm()
-  const navigate = useNavigate()
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -21,7 +19,7 @@ const Home = () => {
 
   return (
     <div className='flex flex-col items-center h-full'>
-      <img src={bookImg} alt="book" className="w-1/2" />
+      <img src={bookImg} alt="book" className="w-1/3 h-1/4" />
       <Box
         component="form"
         onSubmit={handleSubmit}

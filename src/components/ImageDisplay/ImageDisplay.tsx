@@ -2,11 +2,12 @@ import { BookData } from '../../types/global'
 
 type ImageDisplayProps = {
   book: BookData
+  className?: string
 }
 
-const ImageDisplay = ({ book }: ImageDisplayProps) => {
+const ImageDisplay = ({ book, className }: ImageDisplayProps) => {
   return (
-    <img className="object-cover object-center w-36 h-52 bg-slate-900" src={book.imageLinks?.thumbnail} alt={book.title || ""} />
+    <img className={`object-cover object-center bg-slate-900 ${className}`} src={book.imageLinks?.thumbnail} alt={book.title || ""} />
   )
 }
 

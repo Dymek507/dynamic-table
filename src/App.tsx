@@ -2,10 +2,17 @@ import {
   RouterProvider
 } from "react-router-dom";
 import { router } from './App.routes';
+import { Suspense } from "react";
+import { LinearProgress } from "@mui/material";
 
 function App() {
   return (
-    <RouterProvider router={router} />
+    <Suspense fallback={<div className="w-screen h-screen bg-stone-800">
+      LOADING
+    </div>}>
+      <RouterProvider router={router} />
+    </Suspense>
+
   )
 }
 

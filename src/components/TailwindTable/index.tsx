@@ -3,17 +3,18 @@ import { BookData } from '../../types/global'
 import { useFetchData } from '../../hooks/useFetchList'
 import ListItem from './ListItem'
 import TableHead from './TableHead'
+import { useSwrFetcher } from '../../hooks/useSwrFetcher'
+import { convertToBookData } from '../../utils/convertToBookData'
 
 
 type TailwindTableProps = {
-  searchTerm: string
+  booksList: BookData[]
 }
 
-const TailwindTable = ({ searchTerm }: TailwindTableProps) => {
+const TailwindTable = ({ booksList }: TailwindTableProps) => {
 
   const [selectedBooksIds, setSelectedBooksIds] = useState<string[]>([])
 
-  const booksData: (BookData[] | undefined) = useFetchData(searchTerm);
 
   const handleSelect = (id: string) => {
     const selected = selectedBooksIds.find(selectedId => selectedId === id)
@@ -26,8 +27,8 @@ const TailwindTable = ({ searchTerm }: TailwindTableProps) => {
   }
 
   const handleSelectAll = (checkAll: boolean) => {
-    if (checkAll && booksData) {
-      const newSelectedBooksIds = booksData?.map(book => book.id)
+    if (checkAll && booksList) {
+      const newSelectedBooksIds = booksList?.map(book => book.id)
       setSelectedBooksIds(newSelectedBooksIds)
     } else {
       setSelectedBooksIds([])
@@ -36,23 +37,25 @@ const TailwindTable = ({ searchTerm }: TailwindTableProps) => {
 
   return (
     <div className="p-4 overflow-x-auto bg-slate-200">
-      <table className="table w-full ">
-        {/* head */}
-        <TableHead select={handleSelectAll} />
-        <tbody>
-          {booksData && booksData.map(book => <ListItem key={book.id} bookData={book} select={handleSelect} selected={selectedBooksIds} />)}
-        </tbody>
-        {/* foot */}
-        {/* <tfoot>
+      {
+        <table className="table w-full ">
+          {/* head */}
+          <TableHead select={handleSelectAll} />
+          <tbody>
+            {booksList && booksList.map(book => <ListItem key={book.id} bookData={book} select={handleSelect} selected={selectedBooksIds} />)}
+          </tbody>
+          {/* foot */}
+          {/* <tfoot>
         <tr>
-          <th></th>
-          <th>Name</th>
-          <th>Job</th>
-          <th>Favorite Color</th>
-          <th></th>
+        <th></th>
+        <th>Name</th>
+        <th>Job</th>
+        <th>Favorite Color</th>
+        <th></th>
         </tr>
       </tfoot> */}
-      </table>
+        </table>
+      }
     </div>
   )
 }

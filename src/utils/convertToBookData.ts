@@ -1,6 +1,7 @@
 import { BookData } from "../types/global";
 
 export const convertToBookData = (data: any): BookData => {
+  if (!data) return {} as BookData;
   const bookData = {
     id: data.id,
     etag: data.etag,

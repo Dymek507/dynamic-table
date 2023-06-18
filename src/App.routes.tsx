@@ -1,6 +1,8 @@
 import {
   createBrowserRouter
 } from "react-router-dom";
+import loadable from "@loadable/component";
+
 import RootLayout from "./layout";
 import Catalog from "./pages/Catalog";
 import ErrorPage from "./layout/ErrorPage";
