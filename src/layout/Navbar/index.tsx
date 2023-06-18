@@ -5,32 +5,36 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
-import { Search } from './styles/Search';
-import { SearchIconWrapper } from './styles/SearchIconWrapper';
-import { StyledInputBase } from './styles/StyledInputBase';
 import { Link } from 'react-router-dom';
 
 type NavbarProps = {
-  setSearchTerm: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
+  setSearchTerm: (searchTerm: string) => void
 }
 
 const Navbar = ({ setSearchTerm }: NavbarProps) => {
+  const [input, setInput] = React.useState('' as string)
+
+  // const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault()
+  //   setInput('')
+  //   setSearchTerm(e.target.value)
+  // }
+
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar>
-          <Link to="/catalog">
-            <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="open drawer"
-              sx={{ mr: 2 }}
-            >
-              <MenuIcon />
-            </IconButton>
-          </Link>
+    <AppBar position="static">
+      <Toolbar>
+        <Link to="/catalog">
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="open drawer"
+            sx={{ mr: 2 }}
+          >
+            <MenuIcon />
+          </IconButton>
+        </Link>
+        <Link to="/">
           <Typography
             variant="h6"
             noWrap
@@ -39,19 +43,20 @@ const Navbar = ({ setSearchTerm }: NavbarProps) => {
           >
             Books List
           </Typography>
-          <Search>
+        </Link>
+        {/* <Search>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
-              onChange={(e) => setSearchTerm(e)}
+              onChange={(e) => handleSubmit(e)}
+              value={input}
             />
-          </Search>
-        </Toolbar>
-      </AppBar>
-    </Box>
+          </Search> */}
+      </Toolbar>
+    </AppBar>
   );
 }
 

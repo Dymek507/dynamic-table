@@ -6,7 +6,7 @@ type ImageDisplayProps = {
 
 const ImageDisplay = ({ book }: ImageDisplayProps) => {
   return (
-    <img className="object-cover object-center w-36 h-52" src={book.imageLinks?.thumbnail} alt={book.title || ""} />
+    <img className="object-cover object-center w-36 h-52 bg-slate-900" src={book.imageLinks?.thumbnail} alt={book.title || ""} />
   )
 }
 
