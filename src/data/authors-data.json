@@ -1,0 +1,60 @@
+{
+  "authors": [
+    {
+      "name": "J.K. Rowling",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/JK_Rowling_1999.jpg/397px-JK_Rowling_1999.jpg",
+      "birth": "July 31, 1965",
+      "description": "Joanne Rowling, better known by her pen name J.K. Rowling, is a British author, philanthropist, film producer, television producer, and screenwriter. She is best known for writing the Harry Potter fantasy series, which has won multiple awards and sold more than 500 million copies, becoming the best-selling book series in history.",
+      "category": "Fantasy"
+    },
+    {
+      "name": "Agatha Christie",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Agatha_Christie.png",
+      "birth": "September 15, 1890",
+      "description": "Dame Agatha Christie was an English writer known for her detective novels, particularly those featuring fictional detectives Hercule Poirot and Miss Marple. Christie's works have been widely acclaimed for their intricate plots, compelling characters, and surprising twists. She is considered the best-selling novelist of all time.",
+      "category": "Mystery"
+    },
+    {
+      "name": "George R.R.Martin",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/George_R.R._Martin_by_Gage_Skidmore.jpg/417px-George_R.R._Martin_by_Gage_Skidmore.jpg",
+      "birth": "September 20, 1948",
+      "description": "George Raymond Richard Martin, often referred to as George R.R. Martin, is an American novelist and short story writer. He is best known for his series of epic fantasy novels, A Song of Ice and Fire, which was adapted into the television series Game of Thrones. Martin's work has been praised for its complex characters, intricate plots, and realistic portrayal of politics and power struggles.",
+      "category": "Fantasy"
+    },
+    {
+      "name": "J.R.R. Tolkien",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Tolkien-color.png/315px-Tolkien-color.png",
+      "birth": "January 3, 1892",
+      "description": "John Ronald Reuel Tolkien was an English writer, poet, philologist, and academic. He is best known as the author of the high fantasy works The Hobbit and The Lord of the Rings. Tolkien's writings have had a profound impact on the fantasy genre and have garnered him a vast and devoted fanbase.",
+      "category": "Fantasy"
+    },
+    {
+      "name": "Fyodor Dostoevsky",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Vasily_Perov_-_%D0%9F%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82_%D0%A4.%D0%9C.%D0%94%D0%BE%D1%81%D1%82%D0%BE%D0%B5%D0%B2%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_-_Google_Art_Project.jpg/614px-Vasily_Perov_-_%D0%9F%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82_%D0%A4.%D0%9C.%D0%94%D0%BE%D1%81%D1%82%D0%BE%D0%B5%D0%B2%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_-_Google_Art_Project.jpg",
+      "birth": "November 11, 1821",
+      "description": "Fyodor Mikhailovich Dostoevsky was a Russian novelist, philosopher, and essayist. His works explore human psychology in the troubled political, social, and spiritual atmosphere of 19th-century Russia. Dostoevsky's novels, such as Crime and Punishment and The Brothers Karamazov, are considered masterpieces of world literature.",
+      "category": "Classic Fiction"
+    },
+    {
+      "name": "Ernest Hemingway",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Ernest_Hemingway_1923_passport_photo.jpg/360px-Ernest_Hemingway_1923_passport_photo.jpg",
+      "birth": "July 21, 1899",
+      "description": "Ernest Hemingway was an American novelist, short-story writer, and journalist. He is recognized as one of the greatest American writers of the 20th century. Hemingway's concise writing style and his experiences as a war correspondent influenced his works, including The Old Man and the Sea, A Farewell to Arms, and For Whom the Bell Tolls.",
+      "category": "Classic Fiction"
+    },
+    {
+      "name": "Jo Nesbo",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Jo_Nesb%C3%B8.JPG/342px-Jo_Nesb%C3%B8.JPG",
+      "birth": "March 29, 1960",
+      "description": "Jo Nesbø is a Norwegian writer and musician. He is best known for his crime novels featuring the detective Harry Hole. Nesbø's novels are known for their dark and gritty atmosphere, intricate plots, and compelling characters. His works, including The Snowman and The Girl with the Dragon Tattoo, have gained international acclaim.",
+      "category": "Crime Fiction"
+    },
+    {
+      "name": "Dmitry Glukhovsky",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Espace_Shayol_-_Rencontre_avec_Dmitry_Glukhowsky_-_Jeudi_-_Utopiales_2014_-_P1960160_cropped.jpg/398px-Espace_Shayol_-_Rencontre_avec_Dmitry_Glukhowsky_-_Jeudi_-_Utopiales_2014_-_P1960160_cropped.jpg",
+      "birth": "June 12, 1979",
+      "description": "Dmitry Glukhovsky is a Russian author and journalist. He is best known for his post-apocalyptic novel Metro 2033, which depicts a bleak future in the Moscow subway system after a nuclear war. Glukhovsky's works explore themes of survival, human nature, and societal collapse, and have been adapted into successful video games and a film.",
+      "category": "Science Fiction"
+    }
+  ]
+}

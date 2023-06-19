@@ -1,7 +1,6 @@
-import { useSnapCarousel } from "react-snap-carousel";
 import { BookData } from "../../types/global";
-import ImageDisplay from "../../components/ImageDisplay/ImageDisplay";
-import DefaultImage from "../../components/ImageDisplay/DefaultImage";
+import ImageDisplay from "../../components/ImageDisplay";
+import DefaultImage from "../../components/DefaultImage";
 import { Link } from "react-router-dom";
 import { sliceBookArrayTitle } from "./helpers/sliceBookArrayTitle";
 
@@ -10,11 +9,9 @@ type CarouselProps = {
 }
 
 export const Carousel = ({ books }: CarouselProps) => {
-  // const { scrollRef } = useSnapCarousel();
   const booksWithSlicedTitle = sliceBookArrayTitle(books)
   return (
     <ul
-      // ref={scrollRef}
       className="flex h-full overflow-auto scroll-snap-x-mandatory"
     >
       {booksWithSlicedTitle.map((book, i) => (

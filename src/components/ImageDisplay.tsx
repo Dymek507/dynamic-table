@@ -1,4 +1,4 @@
-import { BookData } from '../../types/global'
+import { BookData } from '../types/global'
 
 type ImageDisplayProps = {
   book: BookData

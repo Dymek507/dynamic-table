@@ -1,6 +1,5 @@
-import React from 'react'
 import { BookData } from '../../types/global'
-import { Chip, Stack } from '@mui/material';
+import { Chip } from '@mui/material';
 import { cutString } from '../../utils/cutString';
 
 type InfoProps = {

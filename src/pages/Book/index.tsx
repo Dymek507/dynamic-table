@@ -1,15 +1,15 @@
+import { useEffect } from "react"
 import { useParams } from "react-router-dom"
-import useSWR from "swr";
+
+import { CircularProgress } from "@mui/material"
+import Grid from '@mui/material/Grid';
+
 import { Carousel } from "./Carousel"
 import { useCrumb } from "../../layout"
-import { useEffect } from "react"
-import Grid from '@mui/material/Grid';
 import Info from "./Info"
 import Description from "./Description"
-import DefaultImage from "../../components/ImageDisplay/DefaultImage"
+import DefaultImage from "../../components/DefaultImage"
 import { useGetBookData } from "./hooks/useGetBookData"
-import { CircularProgress } from "@mui/material"
-import { sliceBookArrayTitle } from "./helpers/sliceBookArrayTitle";
 
 const Book = () => {
   const { bookId } = useParams<{ bookId: string }>()
@@ -22,7 +22,6 @@ const Book = () => {
     description,
     imageLinks,
   } = bookData || {};
-
 
   //Set last crumb to book title
   const { setCrumb } = useCrumb()
@@ -40,7 +39,7 @@ const Book = () => {
         <CircularProgress />
       </div>
       :
-      < Grid container spacing={0} className="bg-[#f3f3f3] p-3" >
+      < Grid container spacing={0} className="p-3 bg-white shadow-lg" >
         <Grid item xs={4} className="h-full p-2 flex-center">
           {/* Image display */}
           {imageLinks?.thumbnail ?
@@ -57,10 +56,14 @@ const Book = () => {
         <Grid item xs={12}>
           {/* Other books display */}
           <div className="flex flex-col col-span-2 row-span-1">
-            <h2 className="text-center">Other books:</h2>
-            {booksThisAuthor?.length > 0 ? <Carousel books={booksThisAuthor} /> : <div className="h-full flex-center">
-              <p>No other books by this author</p>
-            </div>
+            <h2 className="text-center">
+              Other books:
+            </h2>
+            {booksThisAuthor?.length > 0 ? <Carousel books={booksThisAuthor} />
+              :
+              <div className="h-full flex-center">
+                <p>No other books by this author</p>
+              </div>
             }
           </div>
         </Grid>

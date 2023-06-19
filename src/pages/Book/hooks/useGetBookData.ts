@@ -15,7 +15,6 @@ export const useGetBookData = (bookId: string) => {
   const bookData = convertToBookData(data) as BookData;
 
   //Fetch books by this author
-
   const authors = data?.volumeInfo?.authors;
   const authorQuery = getAuthorQuery(authors?.[0]);
   const {
@@ -29,11 +28,11 @@ export const useGetBookData = (bookId: string) => {
     fetcher
   );
 
-  console.log(booksList);
-
   const booksThisAuthor = booksList?.items?.map((book: any): BookData => {
     return convertToBookData(book);
   });
+
+  if (error || listError) throw new Error(error || listError);
 
   return {
     bookData,

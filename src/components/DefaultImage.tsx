@@ -1,4 +1,4 @@
-import { cutString } from "../../utils/cutString"
+import { cutString } from "../utils/cutString"
 
 type DefaultImageProps = {
   title: string
