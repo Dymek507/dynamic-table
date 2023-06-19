@@ -15,7 +15,7 @@ export default function AuthorCard({ author }: AuthorCardProps) {
   const authorQuery = name.replace(' ', '+')
   return (
     <Card sx={{
-      width: '180px',
+      width: '240px',
       ':hover': {
         boxShadow: 20,
       },
@@ -27,10 +27,10 @@ export default function AuthorCard({ author }: AuthorCardProps) {
             height="120"
             image={photo}
             alt={name}
-            sx={{ "&.MuiCardMedia-root": { height: '200px' } }}
+            sx={{ "&.MuiCardMedia-root": { height: '360px' } }}
           />
           <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
+            <Typography gutterBottom variant="h6" component="div">
               {name}
             </Typography>
             <Typography variant="body2" color="text.secondary">
