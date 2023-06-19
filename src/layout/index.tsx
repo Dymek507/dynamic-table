@@ -1,13 +1,11 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import Navbar from './Navbar';
-import { Outlet, useNavigate, useOutletContext, useParams } from "react-router-dom";
+import { Outlet, useOutletContext } from "react-router-dom";
 import Breadcrumbs from './Breadcrumbs';
 
 type CrumbContextType = { crumb: string, setCrumb: (string: string) => void };
 
 const RootLayout = () => {
-  const navigate = useNavigate()
-
   const [crumb, setCrumb] = useState<string>('')
 
   return (
