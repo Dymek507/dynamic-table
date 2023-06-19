@@ -3,7 +3,7 @@ import { BookData, BookItem } from "../../../types/global";
 import { convertToBookData } from "../../../utils/convertToBookData";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
-const BOOKS_API_KEY = import.meta.env.VITE_GOOGLE_BOOKS_API_KEY;
+const BOOKS_API_KEY = "AIzaSyD5KvSNppxxis32OoGtIqx8ypYE0xqzZXw";
 
 export const useGetAuthorList = (
   authorQuery: string | undefined,
