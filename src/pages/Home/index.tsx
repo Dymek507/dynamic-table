@@ -31,11 +31,13 @@ const Home = () => {
       <aside className='self-end'>
         <nav className='border-2 '>
           <ul>
-            {authors.map((author) => (
-              <Link to={`/author/${author.id}`} key={author.id}>
+            {authors.map((author) => {
+              const authorQuery = `${author.name}+${author.surname}`
+              return (<Link to={`/${authorQuery}`} key={author.id}>
                 <li className='p-2 hover:bg-gray-200'>{author.name} {author.surname}</li>
-              </Link>
-            ))}
+              </Link>)
+            }
+            )}
           </ul>
         </nav>
       </aside>

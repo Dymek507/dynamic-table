@@ -3,41 +3,21 @@ import { useSwrFetcher } from '../../hooks/useSwrFetcher';
 import { useSearchTerm } from '../../layout';
 import { BookData } from '../../types/global';
 import { convertToBookData } from '../../utils/convertToBookData';
-
-import React, { useState } from 'react';
-import MuiTable from './MuiTable/Table';
-import { useGetBookData } from './hooks/useGetBookData';
-import { getAuthorQuery } from './helpers/getAuthorQuery';
+import { useState } from 'react';
+import MuiTable from './MuiTable';
+import { useParams } from 'react-router-dom';
 
 export type PaginationValues = {
   page: number;
-  limit: number;
-  total: number;
-  changePage: (page: number) => void;
-  changeLimit: (limit: number) => void;
+  changePage: (num: number) => void;
 }
 
-
-function Catalog() {
-  const { searchTerm } = useSearchTerm()
+function Authors() {
   const [page, setPage] = useState(0);
-  const [limit, setLimit] = useState(10);
-  console.log(page, limit)
+  const { authorId } = useParams();
 
-  const changePage = (page: number) => {
-    const newPage = limit * page;
-    setPage(newPage);
-  };
-
-  const changeLimit = (limit: number) => {
-    setLimit(limit);
-  };
-
-  const author = "Stephen King"
-  //Fetch books by this author
-  const authorQuery = getAuthorQuery(author);
-  const url = `?q=inauthor:%22${authorQuery}%22&maxResults=${limit}&startIndex=0&`;
-  const result = useSwrFetcher(url, authorQuery ? true : false);
+  const url = `?q=inauthor:%22${authorId}%22&maxResults=10&startIndex=${page * 10}&`;
+  const result = useSwrFetcher(url, authorId ? true : false);
 
   const booksList = result?.data?.items?.map((book: any): BookData => {
     return convertToBookData(book);
@@ -45,12 +25,15 @@ function Catalog() {
 
   const isLoading = result?.isLoading;
 
+  const changePage = (num: number) => {
+    if (page + num < 0) return;
+    if (booksList.length < 10) return;
+    setPage(prev => prev + num);
+  };
+
   const paginationValues: PaginationValues = {
     page,
-    limit,
-    total: booksList?.length || 0,
     changePage,
-    changeLimit,
   };
 
   return (
@@ -64,4 +47,4 @@ function Catalog() {
   )
 }
 
-export default Catalog
+export default Authors

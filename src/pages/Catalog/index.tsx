@@ -1,12 +1,9 @@
 import { CircularProgress } from '@mui/material';
-import TailwindTable from './TailwindTable';
 import { useSwrFetcher } from '../../hooks/useSwrFetcher';
 import { useSearchTerm } from '../../layout';
 import { BookData } from '../../types/global';
 import { convertToBookData } from '../../utils/convertToBookData';
-
 import React, { useState } from 'react';
-import EnhancedTable from './MuiTable/Table';
 import MuiTable from './MuiTable/Table';
 
 export type PaginationValues = {

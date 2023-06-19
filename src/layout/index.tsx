@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Navbar from './Navbar';
-import { Outlet, useNavigate, useOutletContext } from "react-router-dom";
+import { Outlet, useNavigate, useOutletContext, useParams } from "react-router-dom";
 import Breadcrumbs from './Breadcrumbs';
 
 type SearchContextType = { searchTerm: string, inputHandler: (string: string) => void };
@@ -8,11 +8,14 @@ type CrumbContextType = { crumb: string, setCrumb: (string: string) => void };
 
 const RootLayout = () => {
   const navigate = useNavigate()
+  //active path
+  const { authorId } = useParams();
+
   const [searchTerm, setSearchTerm] = useState<string>('')
   const [crumb, setCrumb] = useState<string>('')
   const inputHandler = (string: string) => {
     setSearchTerm(string)
-    navigate('/catalog')
+    navigate(`/catalog/${searchTerm}`)
   }
 
   return (
