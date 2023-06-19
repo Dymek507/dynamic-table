@@ -10,6 +10,7 @@ import MuiRow from './TableRow';
 import { PaginationValues } from '../types/author';
 import { BookData } from '../../../types/global';
 import { RowBookData } from './types/table';
+import { cutString } from '../../../utils/cutString';
 
 type MuiTableProps = {
   booksData: BookData[];
@@ -23,6 +24,7 @@ export default function MuiTable({ booksData, paginationValues }: MuiTableProps)
   const rows = booksData?.map((book: BookData) => {
     return {
       ...book,
+      title: cutString(book.title, 36),
       authors: book.authors[0],
       categories: book.categories[0],
     }

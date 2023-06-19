@@ -46,7 +46,7 @@ const MuiRow = ({ index, row, selected, handleOpenBook, handleCheckbox }: MuiRow
         <TableCell >{row.authors}</TableCell>
         <TableCell >{row.categories}</TableCell>
         <TableCell >{row.publishedDate}</TableCell>
-      </TableRow>
+      </TableRow >
 
     </>
   )
