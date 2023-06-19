@@ -4,8 +4,9 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import MenuIcon from '@mui/icons-material/Menu';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
 import { Link } from 'react-router-dom';
+import { Menu } from '@mui/material';
 
 type NavbarProps = {
   setSearchTerm: (searchTerm: string) => void
@@ -23,17 +24,7 @@ const Navbar = ({ setSearchTerm }: NavbarProps) => {
   return (
     <AppBar position="static">
       <Toolbar>
-        <Link to="/catalog">
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
-        </Link>
+        <MenuBookIcon sx={{ mr: 1 }} />
         <Link to="/">
           <Typography
             variant="h6"

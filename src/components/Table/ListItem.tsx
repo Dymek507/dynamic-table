@@ -19,33 +19,37 @@ const ListItem = ({ bookData, select, selected }: TableRowProps) => {
     setIsSelected(isSelected)
   }, [bookData.id, selected])
 
+  const authorSliced = cutString(authors[0], 20)
+
   return (
-    <tr>
+    <tr className='px-2 bg-slate-300'>
       <th>
         <label>
           <input type="checkbox" className="checkbox" onChange={() => select(id)} checked={isSelected} />
         </label>
       </th>
       <td>
+        {/* Image display */}
+        <div className="avatar">
+          {/* <div className="w-12 h-12 flex-center">
+            {imageLinks?.smallThumbnail ?
+              <img className='h-full' src={imageLinks.smallThumbnail} alt={title} />
+              :
+              null
+            }
+          </div> */}
+        </div>
+      </td>
+      <td>
         <div className="flex items-center space-x-3">
-          {/* Image display */}
-          <div className="avatar">
-            <div className="w-12 h-12 mask mask-squircle flex-center">
-              {imageLinks?.smallThumbnail ?
-                <img className='h-full' src={imageLinks.smallThumbnail} alt={title} />
-                :
-                null
-              }
-            </div>
-          </div>
           <div>
             <div className="font-bold">{title}</div>
-            <div className="text-sm opacity-50">{authors}</div>
+            <div className="text-[0.9em] opacity-50">{authorSliced}</div>
           </div>
         </div>
       </td>
       <td>
-        <span className="text-sm badge badge-ghost badge-sm">{categories}</span>
+        <span className="text-[0.9em]">{categories[0]}</span>
       </td>
       <td>{publishedDate?.slice(0, 4) || ""}</td>
       <th>

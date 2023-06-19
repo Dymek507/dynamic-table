@@ -2,16 +2,14 @@ import {
   RouterProvider
 } from "react-router-dom";
 import { router } from './App.routes';
-import { Suspense } from "react";
-import { LinearProgress } from "@mui/material";
+import { ThemeProvider } from "@mui/material";
+import { themeMain } from "./AppMuiTheme";
 
 function App() {
   return (
-    <Suspense fallback={<div className="w-screen h-screen bg-stone-800">
-      LOADING
-    </div>}>
+    <ThemeProvider theme={themeMain}>
       <RouterProvider router={router} />
-    </Suspense>
+    </ThemeProvider>
 
   )
 }

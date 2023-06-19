@@ -16,7 +16,7 @@ const RootLayout = () => {
   }
 
   return (
-    <div className='flex flex-col h-screen gap-2'>
+    <div className='flex flex-col h-screen gap-2 sm:px-8 lg:px-32'>
       <Navbar setSearchTerm={inputHandler} />
       <Breadcrumbs lastCrumb={crumb} />
       <Outlet context={{ searchTerm, inputHandler, setCrumb }} />

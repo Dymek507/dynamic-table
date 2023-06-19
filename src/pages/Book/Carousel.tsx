@@ -3,7 +3,6 @@ import { BookData } from "../../types/global";
 import ImageDisplay from "../../components/ImageDisplay/ImageDisplay";
 import DefaultImage from "../../components/ImageDisplay/DefaultImage";
 import { Link } from "react-router-dom";
-import { cutString } from "../../utils/cutString";
 import { sliceBookArrayTitle } from "./helpers/sliceBookArrayTitle";
 
 type CarouselProps = {
@@ -24,9 +23,9 @@ export const Carousel = ({ books }: CarouselProps) => {
         >
           <Link to={`/catalog/${book.id}`}>
             {book.imageLinks.thumbnail ?
-              <ImageDisplay book={book} className="h-40 w-28" />
+              <ImageDisplay book={book} className="h-40 duration-300 w-28 hover:scale-105" />
               :
-              <DefaultImage title={book.title} className="h-40 w-28" />
+              <DefaultImage title={book.title} className="h-40 duration-300 w-28 hover:scale-105" />
             }
             <p className="w-full text-sm text-center">{book.title}</p>
           </Link>

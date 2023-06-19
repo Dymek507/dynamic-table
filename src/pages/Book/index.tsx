@@ -58,13 +58,13 @@ const Book = () => {
         </Grid>
         <Grid item xs={12}>
           {/* Other books display */}
-          <div className="flex flex-col col-span-2 row-span-1">
+          {/* <div className="flex flex-col col-span-2 row-span-1">
             <h2 className="text-center">Other books:</h2>
             {booksThisAuthor?.length > 0 ? <Carousel books={booksThisAuthor} /> : <div className="h-full flex-center">
               <p>No other books by this author</p>
             </div>
             }
-          </div>
+          </div> */}
         </Grid>
       </Grid >
     }

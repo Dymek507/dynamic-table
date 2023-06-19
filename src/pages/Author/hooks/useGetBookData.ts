@@ -3,16 +3,9 @@ import { BookData } from "../../../types/global";
 import { convertToBookData } from "../../../utils/convertToBookData";
 import { getAuthorQuery } from "../helpers/getAuthorQuery";
 
-export const useGetBookData = (bookId: string) => {
-  //Fetch book
-  const bookUrl = `/${bookId}&`;
-  const resultBook = useSwrFetcher(bookUrl, bookId ? true : false);
-
-  const bookData = convertToBookData(resultBook?.data) as BookData;
-
+export const useGetBookData = (author: string) => {
   //Fetch books by this author
-  const authors = resultBook?.data?.volumeInfo?.authors;
-  const authorQuery = getAuthorQuery(authors?.[0]);
+  const authorQuery = getAuthorQuery(author);
   const url = `?q=inauthor:%22${authorQuery}%22&`;
   const result = useSwrFetcher(url, authorQuery ? true : false);
 
@@ -21,8 +14,7 @@ export const useGetBookData = (bookId: string) => {
   });
 
   return {
-    bookData,
     booksThisAuthor,
-    isLoading: resultBook.isLoading || result.isLoading,
+    isLoading: result.isLoading,
   };
 };
